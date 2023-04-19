@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Search } from "../layouts";
+import { useState } from "react";
 
 const Header = () => {
   const logoSvg = (
@@ -17,12 +18,25 @@ const Header = () => {
       ></path>
     </svg>
   );
+  const logoSvgSmall = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      id="airbnb"
+      className="w-[100%] h-[100%]"
+    >
+      <path
+        fill="#F06292"
+        d="M15.02 11.113c-.561-1.19-1.405-2.973-2.25-4.755s-1.688-3.564-2.249-4.752A2.794 2.794 0 0 0 8 0a2.795 2.795 0 0 0-2.514 1.592c-.646 1.38-1.673 3.542-2.64 5.582-.711 1.499-1.391 2.931-1.865 3.938a3.413 3.413 0 0 0-.328 1.454A3.437 3.437 0 0 0 4.087 16c1.22 0 2.673-.849 3.913-2.058C9.24 15.151 10.693 16 11.913 16a3.439 3.439 0 0 0 3.435-3.435c0-.497-.114-1-.328-1.452zM6.218 8.652c0-.983.8-1.783 1.782-1.783s1.782.8 1.782 1.783c0 1.19-.762 2.61-1.782 3.806-1.021-1.195-1.782-2.616-1.782-3.806zM11.913 15c-.898 0-2.129-.744-3.217-1.8 1.212-1.413 2.086-3.125 2.086-4.548C10.782 7.118 9.534 5.87 8 5.87S5.218 7.118 5.218 8.652c0 1.422.874 3.135 2.086 4.548C6.216 14.256 4.985 15 4.087 15a2.437 2.437 0 0 1-2.435-2.435c0-.351.08-.705.232-1.026.475-1.008 1.154-2.439 1.865-3.937.968-2.042 1.995-4.206 2.642-5.585A1.79 1.79 0 0 1 8 1a1.79 1.79 0 0 1 1.615 1.031c.561 1.19 1.405 2.973 2.25 4.755s1.688 3.563 2.25 4.754c.152.32.232.674.232 1.025A2.436 2.436 0 0 1 11.913 15z"
+      ></path>
+    </svg>
+  );
   const logoGlobe = (
     <svg
       fill="none"
       stroke="currentColor"
-      stroke-width="1.5"
-      viewBox="0 0 24 24"
+      stroke-width="1.0"
+      viewBox="0 0 22 22"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       className="w-[100%] h-[100%]"
@@ -69,23 +83,32 @@ const Header = () => {
 
   const showModal = () => {};
   return (
-    <header className="px-12 py-3 border-b-2">
-      <nav className="grid grid-cols-3 justify-between items-center w-[100%]">
-        <Link to="/" className="w-20 h-10 justify-self-start">
+    <header className="sm:px-5 lg:px-12 py-3 border-b-2">
+      <nav className="grid  tablet:grid-cols-[1fr_minmax(max-content,1fr)_minmax(max-content,1fr)] sm:grid-cols-[50px_minmax(min-content,auto)_minmax(max-content,1fr)] grid-cols-1 justify-between items-center w-[100%]">
+        <Link
+          to="/"
+          className="w-20 h-10 justify-self-start hidden tablet:flex"
+        >
           {logoSvg}
         </Link>
+        <Link
+          to="/"
+          className="w-10 h-9 justify-self-start hidden sm:flex tablet:hidden "
+        >
+          {logoSvgSmall}
+        </Link>
         <Search />
-        <div className="justify-self-end flex items-center ">
+        <div className="justify-self-end sm:flex items-center hidden">
           <Link
             to=""
-            className="font-semibold text-xs w-[fit-content] hover:bg-slate-50 px-5 py-3 rounded-full"
+            className="font-semibold text-xs w-[fit-content] hover:bg-slate-50 px-4 py-3 rounded-full"
           >
             Air-indi your home
           </Link>
-          <div className="w-10 h-10 hover:bg-slate-100 px-3 py-2 rounded-full">
+          <div className="w-10 h-10 hover:bg-slate-100 p-3 rounded-full">
             {logoGlobe}
           </div>
-          <div className="w-[fit-content] px-2 py-1 h-10 hover:drop-shadow-md hover:cursor-pointer rounded-full border-2 flex gap-3">
+          <div className="w-[fit-content] px-2 py-1 h-10 hover:drop-shadow-md hover:cursor-pointer rounded-full border-2 flex gap-3 ml-2">
             {logoMenuBarThree}
             {logoUser}
           </div>

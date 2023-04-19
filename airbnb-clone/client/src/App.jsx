@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
-import { LoadingPage, Header } from "./components/pages";
+import { LoadingPage } from "./components/pages";
+import { Header } from "./components/templates";
 
 function App() {
   return (

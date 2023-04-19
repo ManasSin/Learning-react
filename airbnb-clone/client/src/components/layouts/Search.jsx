@@ -17,11 +17,31 @@ const Search = () => {
     </svg>
   );
   return (
-    <div className="flex p-1 border-2 rounded-3xl w-[fit-content] items-center justify-self-center">
-      <p className="text-sm border-r-2 px-4">Anywhere</p>
-      <p className="text-sm border-r-2 px-4">Any week</p>
-      <p className="text-sm px-4">Add guest</p>
-      {/* <img src={searchLogo} alt="search" className="w-10" /> */}
+    <div className="flex p-1 border-2 rounded-3xl items-center sm:w-[min(100%, 220px)] sm:justify-self-center justify-between ">
+      <button
+        onClick={() => {
+          openInputModal;
+        }}
+        className="text-xs font- border-r-2 px-4 truncate shrink basis-auto}"
+      >
+        Anywhere
+      </button>
+      <button
+        onClick={() => {
+          openInputModal;
+        }}
+        className="text-xs font- border-r-2 px-4 truncate shrink basis-auto"
+      >
+        Any week
+      </button>
+      <button
+        onClick={() => {
+          openInputModal;
+        }}
+        className="text-xs font- px-4 truncate shrink basis-auto"
+      >
+        Add guest
+      </button>
       <div className="w-8 h-8 p-2 bg-red-500 rounded-full text-white">
         {searchLogo}
       </div>
