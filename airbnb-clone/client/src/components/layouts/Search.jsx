@@ -17,12 +17,12 @@ const Search = () => {
     </svg>
   );
   return (
-    <div className="flex p-1 border-2 rounded-3xl items-center sm:w-[min(100%, 220px)] sm:justify-self-center justify-between ">
+    <div className="flex p-1 border-2 rounded-3xl items-center sm:w-[min(100%, 220px)] sm:justify-self-center justify-between shadow-md">
       <button
         onClick={() => {
           openInputModal;
         }}
-        className="text-xs font-medium border-r-2 px-4 truncate shrink basis-auto}"
+        className="text-xs font-medium border-r-2 px-4 truncate shrink basis-auto"
       >
         Anywhere
       </button>
@@ -30,20 +30,22 @@ const Search = () => {
         onClick={() => {
           openInputModal;
         }}
-        className="text-xs font-medium border-r-2 px-4 truncate shrink basis-auto"
+        className="text-xs font-medium border-r-2 px-4 truncate shrink basis-auto hidden sm:block"
       >
         Any week
       </button>
-      <button
-        onClick={() => {
-          openInputModal;
-        }}
-        className="text-xs font-medium px-4 truncate shrink basis-auto"
-      >
-        Add guest
-      </button>
-      <div className="w-8 h-8 p-2 bg-red-500 rounded-full text-white">
-        {searchLogo}
+      <div className="flex cursor-pointer">
+        <button
+          onClick={() => {
+            openInputModal;
+          }}
+          className="text-xs font-light px-4 truncate shrink basis-auto hidden sm:block"
+        >
+          Add guest
+        </button>
+        <div className="w-8 h-8 p-2 bg-red-500 rounded-full text-white">
+          {searchLogo}
+        </div>
       </div>
     </div>
   );

@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import { LoadingPage } from "./components/pages";
-import { Header } from "./components/templates";
+import { FilterBar, Header } from "./components/templates";
+import { HomePage } from "./components/pages";
 
 function App() {
   return (
     <Routes>
-      <Route index element={<Header />} />
+      <Route index element={<HomePage />} />
     </Routes>
   );
 }
