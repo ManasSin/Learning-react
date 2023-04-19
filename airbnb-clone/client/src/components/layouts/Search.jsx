@@ -22,7 +22,7 @@ const Search = () => {
         onClick={() => {
           openInputModal;
         }}
-        className="text-xs font- border-r-2 px-4 truncate shrink basis-auto}"
+        className="text-xs font-medium border-r-2 px-4 truncate shrink basis-auto}"
       >
         Anywhere
       </button>
@@ -30,7 +30,7 @@ const Search = () => {
         onClick={() => {
           openInputModal;
         }}
-        className="text-xs font- border-r-2 px-4 truncate shrink basis-auto"
+        className="text-xs font-medium border-r-2 px-4 truncate shrink basis-auto"
       >
         Any week
       </button>
@@ -38,7 +38,7 @@ const Search = () => {
         onClick={() => {
           openInputModal;
         }}
-        className="text-xs font- px-4 truncate shrink basis-auto"
+        className="text-xs font-medium px-4 truncate shrink basis-auto"
       >
         Add guest
       </button>
