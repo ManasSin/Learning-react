@@ -1,11 +1,13 @@
 import React from "react";
-import { FilterBar, Header } from "../templates";
+import { AuthModal, FilterBar, Header } from "../templates";
+import { ModalUniversal } from "../layouts";
 
 const HomePage = () => {
   return (
     <>
       <Header />
       <FilterBar />
+      {/* <AuthModal /> */}
     </>
   );
 };

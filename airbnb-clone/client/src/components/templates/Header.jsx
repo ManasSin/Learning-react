@@ -34,17 +34,14 @@ const Header = () => {
 
   const showModal = () => {};
   return (
-    <header className="sm:px-5 lg:px-12 px-2 py-3 border-b-2">
-      <nav className="grid  md:grid-cols-[1fr_minmax(max-content,1fr)_minmax(max-content,1fr)] sm:grid-cols-[50px_minmax(min-content,auto)_minmax(max-content,1fr)] grid-cols-[90%_10%] justify-between items-center w-[100%]">
-        <Link
-          to="/"
-          className="w-20 h-10 justify-self-start hidden tablet:flex"
-        >
+    <header className="sm:px-5 lg:px-12 xl:px-[6%] px-2 py-3 border-b-2">
+      <nav className="grid  tablet:grid-cols-[1fr_minmax(max-content,1fr)_minmax(max-content,1fr)] sm:grid-cols-[50px_minmax(min-content,auto)_minmax(max-content,1fr)] grid-cols-[90%_10%] justify-between items-center w-[100%]">
+        <Link to="/" className="w-20 h-10 justify-self-start hidden lg:flex">
           {logoSvg}
         </Link>
         <Link
           to="/"
-          className="w-10 h-9 justify-self-start hidden sm:flex tablet:hidden "
+          className="w-10 h-9 justify-self-start hidden sm:flex lg:hidden "
         >
           {logoSvgSmall}
         </Link>
