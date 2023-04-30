@@ -1,4 +1,4 @@
-import { usePokemon } from "../context/store";
+import { usePokemon } from "./context/store";
 import PokemonItem from "./PokemonItem";
 import SearchBox from "./SearchBox";
 

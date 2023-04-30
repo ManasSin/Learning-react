@@ -1,12 +1,19 @@
-import "./App.css";
-import Pokemon from "./component/pokemon";
-import PokemonStore from "./context/PokemonStore";
+import { QueryClient, QueryClientProvider } from "react-query";
+import PokemonStore from "./component/context/PokemonStore";
+import { Router, Outlet, ReactLocation } from "@tanstack/react-location";
+import Routes from "./component/router/routes";
 
 function App() {
+  const queryClient = new QueryClient();
+  const location = new ReactLocation();
   return (
-    <PokemonStore>
-      <Pokemon />
-    </PokemonStore>
+    <QueryClientProvider client={queryClient}>
+      <PokemonStore>
+        <Router location={location} routes={Routes}>
+          <Outlet />
+        </Router>
+      </PokemonStore>
+    </QueryClientProvider>
   );
 }
 

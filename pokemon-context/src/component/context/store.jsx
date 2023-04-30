@@ -1,35 +1,45 @@
 import { useContext, useEffect, useReducer, useCallback, useMemo } from "react";
 import PokemonContext from "./PokemonContext";
+import { useQuery } from "react-query";
 
 export function PokemonFetch() {
-  const [{ pokemon, search }, dispatch] = useReducer(
+  const [{ search }, dispatch] = useReducer(
     (state, action) => {
       switch (action.type) {
-        case "ADD_POKEMON":
-          return { ...state, pokemon: action.payload };
+        // case "ADD_POKEMON":
+        //   return { ...state, pokemon: action.payload };
         case "SET_SEARCH":
           return { ...state, search: action.payload };
       }
     },
     {
-      pokemon: [],
+      // pokemon: [],
       search: "",
     }
   );
 
-  useEffect(() => {
-    fetch("/pokemon.json")
-      .then((response) => response.json())
-      .then((data) =>
-        dispatch({
-          type: "ADD_POKEMON",
-          payload: data,
-        })
-      )
-      .catch((error) => {
-        console.error("the error is: ", error);
-      });
-  }, []);
+  const { data: pokemon } = useQuery({
+    queryKey: ["pokemon"],
+    queryFn: () =>
+      fetch("/pokemon.json").then((response) => {
+        return response.json();
+      }),
+    initialData: [],
+  });
+
+  // useEffect(() => {
+  //   fetch("/pokemon.json")
+  //     .then((response) => response.json())
+  //     .then((data) =>
+  //       dispatch({
+  //         type: "ADD_POKEMON",
+  //         payload: data,
+  //       })
+  //     )
+  //     .catch((error) => {
+  //       console.error("the error is: ", error);
+  //     });
+  // }, []);
 
   const SetSearch = useCallback((search) => {
     dispatch({
