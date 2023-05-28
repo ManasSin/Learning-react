@@ -1,10 +1,12 @@
+import { useSelector } from "react-redux";
+import { sortedList } from "../features/action/sortingPokemon";
 import { usePokeminQuery } from "../features/api/apiSlice";
 
 const PokemonList = () => {
-  const { data } = usePokeminQuery(undefined);
+  const pokemon = useSelector(sortedList);
   return (
     <ul className="nothing grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-3">
-      {(data || []).map((p) => (
+      {pokemon.map((p) => (
         //   <li to={`/pokemon/${p.id}`} key={p.id}>
         <li
           key={p.id}
