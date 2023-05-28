@@ -1,22 +1,22 @@
 const ProductList = [
   {
-    id: "1",
+    id: 1,
     title: "camera",
     price: 350,
   },
   {
-    id: "2",
+    id: 2,
     title: "tripod",
     price: 350,
   },
   {
-    id: "3",
+    id: 3,
     title: "Jordon",
     price: 300,
   },
 ];
 
-function getProductById(id) {
+function getProductData(id) {
   const product = ProductList.find((products) => products.id === id);
 
   if (product === undefined) return undefined;
@@ -24,4 +24,4 @@ function getProductById(id) {
   return product;
 }
 
-export { ProductList, getProductById };
+export { ProductList, getProductData };
